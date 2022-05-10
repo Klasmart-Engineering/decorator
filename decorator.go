@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/KL-Engineering/serverless-decorator/als"
-	"github.com/KL-Engineering/serverless-decorator/tcs"
+	"github.com/KL-Engineering/decorator/als"
+	"github.com/KL-Engineering/decorator/tcs"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )

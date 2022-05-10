@@ -1,10 +1,11 @@
 package als
 
 import (
-	"github.com/aws/aws-lambda-go/events"
 	"net/http"
 	"strings"
 	"unsafe"
+
+	"github.com/aws/aws-lambda-go/events"
 )
 
 // Response wraps APIGatewayProxyResponse to http.ResponseWriter

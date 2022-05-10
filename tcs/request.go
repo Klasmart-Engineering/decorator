@@ -3,9 +3,10 @@ package tcs
 import (
 	"bytes"
 	"context"
-	"github.com/tencentyun/scf-go-lib/cloudevents/scf"
 	"net/http"
 	"strings"
+
+	"github.com/tencentyun/scf-go-lib/cloudevents/scf"
 )
 
 type Request struct {

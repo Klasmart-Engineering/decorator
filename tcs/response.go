@@ -1,10 +1,11 @@
 package tcs
 
 import (
-	"github.com/tencentyun/scf-go-lib/cloudevents/scf"
 	"net/http"
 	"strings"
 	"unsafe"
+
+	"github.com/tencentyun/scf-go-lib/cloudevents/scf"
 )
 
 // Response wraps APIGatewayProxyResponse to http.ResponseWriter

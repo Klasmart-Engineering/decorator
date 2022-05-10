@@ -5,16 +5,17 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
-	"github.com/aws/aws-lambda-go/events"
 	"io"
 	"net/http"
 	"strings"
+
+	"github.com/aws/aws-lambda-go/events"
 )
 
 type Request struct {
 	events.APIGatewayV2HTTPRequest
 	refinedHeader http.Header
-	url string
+	url           string
 }
 
 func (req *Request) GetHttpReq(ctx context.Context) (httpRequest *http.Request) {
@@ -24,7 +25,6 @@ func (req *Request) GetHttpReq(ctx context.Context) (httpRequest *http.Request) 
 	if req.IsBase64Encoded {
 		bodyReader = base64.NewDecoder(base64.StdEncoding, bytes.NewBufferString(req.Body))
 	}
-
 
 	httpRequest, err := http.NewRequestWithContext(ctx, req.RequestContext.HTTP.Method, req.url, bodyReader)
 	if err != nil {
