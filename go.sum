@@ -1,5 +1,5 @@
-github.com/KL-Engineering/tracecontext v0.1.0 h1:Vrmwz6YJruU4v3mwypRG+1LnqSbXaWL9ezSbflOlBug=
-github.com/KL-Engineering/tracecontext v0.1.0/go.mod h1:7Z1AZJwoLyRY4+CqWd+QWaylTsft429V9/MhoVztDwc=
+github.com/KL-Engineering/tracecontext v0.1.1 h1:pRVt9MfgfyOnGNV0sbE3x19ZKJDpKWMPZfVeNjwcv70=
+github.com/KL-Engineering/tracecontext v0.1.1/go.mod h1:7Z1AZJwoLyRY4+CqWd+QWaylTsft429V9/MhoVztDwc=
 github.com/aws/aws-lambda-go v1.31.0 h1:g2hMHH1SxTOiKSFbX6I4HAIXQAr8D7CeBprXQCce05I=
 github.com/aws/aws-lambda-go v1.31.0/go.mod h1:IF5Q7wj4VyZyUFnZ54IQqeWtctHQ9tz+KhcbDenr220=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
