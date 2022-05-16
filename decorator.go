@@ -6,6 +6,7 @@ import (
 
 	"github.com/KL-Engineering/decorator/als"
 	"github.com/KL-Engineering/decorator/tcs"
+	"github.com/KL-Engineering/tracecontext"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )
@@ -23,12 +24,24 @@ type decoratorHandler struct {
 }
 
 func (d *decoratorHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	prevTraceContext := tracecontext.ExtractTraceContextFromHeader(r.Header)
+	currentTraceContext, err := tracecontext.ChainTraceContext(&prevTraceContext)
+
+	if err != nil {
+		// failed to chain trace context, prev is invalid
+		currentTraceContext = tracecontext.NewTraceContext()
+	}
+
+	ctx, _ := currentTraceContext.EmbedIntoContext(r.Context())
+	r = r.WithContext(ctx)
+	currentTraceContext.SetHeader(w.Header())
+
 	d.Handler.ServeHTTP(w, r)
 }
 
 var env RunningEnv
 
-// RunWithHTTPHandler 是服务启动入口
+// RunWithHTTPHandler service entry
 func RunWithHTTPHandler(handler http.Handler, addr string) {
 	dec := &decoratorHandler{handler}
 
