@@ -4,9 +4,9 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/KL-Engineering/decorator/als"
-	"github.com/KL-Engineering/decorator/tcs"
-	"github.com/KL-Engineering/tracecontext"
+	"github.com/Klasmart-Engineering/decorator/als"
+	"github.com/Klasmart-Engineering/decorator/tcs"
+	"github.com/Klasmart-Engineering/tracecontext"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )
